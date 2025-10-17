@@ -1,6 +1,9 @@
 package com.example.code;
 
-public class City {
+/**
+* This is a class that defines a City.
+*/
+public class City implements Comparable {
     private String name;
     private String province;
 
@@ -23,6 +26,12 @@ public class City {
 
     public void setProvince(String province) {
         this.province = province;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        City city = (City) o;
+        return this.name.compareTo(city.getName()); // this.city refers to the city name
     }
 
 }
